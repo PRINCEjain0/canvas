@@ -56,15 +56,6 @@ export default function Home() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   };
 
-  const saveImage = () => {
-    const canvas = canvasRef.current;
-    const dataURL = canvas.toDataURL("image/png");
-    const link = document.createElement("a");
-    link.href = dataURL;
-    link.download = "drawing.png";
-    link.click();
-  };
-
   return (
     <div className="p-4 space-y-4 flex flex-col justify-center items-center ">
       <div className="flex items-center space-x-4">
@@ -87,12 +78,6 @@ export default function Home() {
           className="bg-red-500 text-white px-4 py-2 rounded-md"
         >
           Clear
-        </button>
-        <button
-          onClick={saveImage}
-          className="bg-blue-500 text-white px-4 py-2 rounded-md"
-        >
-          Save
         </button>
       </div>
 
